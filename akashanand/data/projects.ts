@@ -19,19 +19,6 @@ export const projects: ProjectItem[] = [
       "Observability",
     ],
     githubUrl: "https://github.com/",
-    demoUrl: "#",
-  },
-  {
-    name: "Infrastructure as Code Platform",
-    featured: true,
-    category: "Cloud / Automation",
-    summary:
-      "A fault-tolerant AWS platform built with infrastructure as code to provision cloud resources, automate deployments, and create repeatable environments.",
-    impact:
-      "Improved deployment consistency and operational efficiency through automated provisioning, CI/CD, and scripted teardown flows across core AWS services.",
-    stack: ["AWS", "CloudFormation", "EC2", "S3", "IAM", "Travis CI", "Bash"],
-    githubUrl: "https://github.com/",
-    demoUrl: "#",
   },
   {
     name: "Load Balancer as a Service APIs",
@@ -45,8 +32,26 @@ export const projects: ProjectItem[] = [
     githubUrl: "https://github.com/",
   },
   {
+    name: "Network Automation Services",
+    featured: true,
+    category: "Cloud / Network Automation",
+    summary:
+      "A production-ready network automation platform built on F5 DNS and Visa Cloud Platform to fully automate global traffic management workflows and reduce manual operational overhead.",
+    impact:
+      "Improved scalability and deployment efficiency by automating GTM workflows, strengthening secure delivery practices, and leading LBaaS infrastructure provisioning and migration efforts.",
+    stack: [
+      "F5 DNS",
+      "Visa Cloud Platform",
+      "Network Automation",
+      "Secure SDLC",
+      "Infrastructure Provisioning",
+      "Traffic Management",
+    ],
+    githubUrl: "https://github.com/",
+  },
+  {
     name: "Certificate Lifecycle Automation",
-    featured: false,
+    featured: true,
     category: "Automation / Security",
     summary:
       "Backend services for enterprise certificate issuance and renewal, replacing manual certificate handling with automated workflows and platform APIs.",
@@ -59,6 +64,17 @@ export const projects: ProjectItem[] = [
       "Security",
       "Platform Engineering",
     ],
+    githubUrl: "https://github.com/",
+  },
+  {
+    name: "Infrastructure as Code Platform",
+    featured: false,
+    category: "Cloud / Automation",
+    summary:
+      "A fault-tolerant AWS platform built with infrastructure as code to provision cloud resources, automate deployments, and create repeatable environments.",
+    impact:
+      "Improved deployment consistency and operational efficiency through automated provisioning, CI/CD, and scripted teardown flows across core AWS services.",
+    stack: ["AWS", "CloudFormation", "EC2", "S3", "IAM", "Travis CI", "Bash"],
     githubUrl: "https://github.com/",
   },
   {
@@ -82,6 +98,5 @@ export const projects: ProjectItem[] = [
       "Delivered real-time authorization with a hybrid MQTT and CoAP communication model for dependable end-to-end device interactions.",
     stack: ["AWS", "Raspberry Pi", "Computer Vision", "MQTT", "CoAP", "IoT"],
     githubUrl: "https://github.com/",
-    demoUrl: "#",
   },
 ];

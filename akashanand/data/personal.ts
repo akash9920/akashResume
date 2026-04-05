@@ -10,8 +10,8 @@ export const personalInfo: PersonalInfo = {
   shortFooterBlurb:
     "Senior Software Engineer focused on backend, platform, and cloud systems.",
   contact: {
-    email: "akash@example.com",
-    location: "United States",
+    email: "akash.iit10@gmail.com",
+    location: "Austin, TX",
     availability:
       "Open to senior backend, platform, and distributed systems roles.",
     invite:

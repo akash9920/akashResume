@@ -11,6 +11,11 @@ function getPreferredTheme(): Theme {
     return "light";
   }
 
+  const documentTheme = document.documentElement.dataset.theme;
+  if (documentTheme === "light" || documentTheme === "dark") {
+    return documentTheme;
+  }
+
   const savedTheme = window.localStorage.getItem(storageKey);
   if (savedTheme === "light" || savedTheme === "dark") {
     return savedTheme;
@@ -22,12 +27,26 @@ function getPreferredTheme(): Theme {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => getPreferredTheme());
+  const [theme, setTheme] = useState<Theme>("light");
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setTheme(getPreferredTheme());
+      setIsHydrated(true);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    if (!isHydrated) {
+      return;
+    }
+
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem(storageKey, theme);
-  }, [theme]);
+  }, [isHydrated, theme]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");

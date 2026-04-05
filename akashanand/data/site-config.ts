@@ -1,6 +1,6 @@
 export const siteConfig = {
   siteName: "Akash Anand Portfolio",
-  siteUrl: "https://akashanand.dev",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://akashanand.dev",
   locale: "en_US",
   defaultOgImage: "/opengraph-image",
   seo: {

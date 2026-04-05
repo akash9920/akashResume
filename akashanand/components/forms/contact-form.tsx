@@ -225,7 +225,9 @@ export function ContactForm({ email }: ContactFormProps) {
                 {email}
               </span>
             </a>
-            {socialLinks.map((link) => (
+            {socialLinks
+              .filter((link) => link.label !== "Email")
+              .map((link) => (
               <a
                 key={link.label}
                 href={link.href}
@@ -247,8 +249,10 @@ export function ContactForm({ email }: ContactFormProps) {
         <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-soft)]">
           <h3 className="text-xl font-semibold">Open to discuss</h3>
           <p className="mt-4 text-sm leading-7 text-[var(--color-text-muted)]">
-            I’m open to discussing engineering roles, collaborations, and
-            interesting technical challenges.
+            I’m a problem solver who enjoys making complex systems simpler,
+            more reliable, and easier for teams to build on. I’m open to
+            discussing engineering roles, collaborations, and interesting
+            technical challenges.
           </p>
           <ul className="mt-4 space-y-3 text-sm leading-7 text-[var(--color-text-muted)]">
             <li>Backend platforms and APIs</li>

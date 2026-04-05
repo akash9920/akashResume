@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { personalInfo } from "@/data";
 import { SectionShell } from "@/components/ui/section-shell";
@@ -72,10 +73,16 @@ export function HeroSection() {
                   Recruiter Snapshot
                 </div>
                 <div className="relative flex h-full flex-col justify-between">
-                  <div className="mx-auto mt-8 flex h-36 w-36 items-center justify-center rounded-[2rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-accent)_20%,white),var(--color-surface-strong))] shadow-[var(--shadow-soft)]">
-                    <div className="relative h-24 w-24 rounded-full border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,var(--color-surface-strong),color-mix(in_srgb,var(--color-accent)_10%,var(--color-surface)))]">
-                      <div className="absolute left-1/2 top-[22%] h-8 w-8 -translate-x-1/2 rounded-full bg-[color:var(--color-accent)]/80" />
-                      <div className="absolute bottom-[14%] left-1/2 h-10 w-14 -translate-x-1/2 rounded-t-[999px] bg-[color:var(--color-accent)]/70" />
+                  <div className="mx-auto mt-8 h-40 w-40 overflow-hidden rounded-[2rem] border border-[var(--color-border-strong)] bg-[linear-gradient(180deg,color-mix(in_srgb,var(--color-accent)_20%,white),var(--color-surface-strong))] p-2 shadow-[var(--shadow-soft)]">
+                    <div className="relative h-full w-full overflow-hidden rounded-[1.35rem]">
+                      <Image
+                        src="/akash.jpeg"
+                        alt="Akash Anand portrait"
+                        fill
+                        priority
+                        sizes="160px"
+                        className="object-cover"
+                      />
                     </div>
                   </div>
 

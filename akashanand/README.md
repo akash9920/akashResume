@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Akash Anand Portfolio
 
-## Getting Started
+A production-ready personal portfolio built with Next.js App Router, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS 4
+
+## Setup
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Copy environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+3. Update `NEXT_PUBLIC_SITE_URL` in `.env.local` for your deployed domain.
+
+## Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
-## Learn More
+## Content Editing
 
-To learn more about Next.js, take a look at the following resources:
+Update site content from the typed files in `data/`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `data/personal.ts`: name, title, hero, about, contact, resume highlights
+- `data/navigation.ts`: navbar items
+- `data/experience.ts`: work history
+- `data/projects.ts`: projects, categories, GitHub/demo links
+- `data/skills.ts`: grouped skills
+- `data/social-links.ts`: GitHub, LinkedIn, email
+- `data/site-config.ts`: site URL and SEO defaults
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
+Recommended: deploy on Vercel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Why:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Best support for Next.js App Router
+- Automatic HTTPS, previews, and simple custom domain setup
+- Minimal ops overhead for a personal portfolio
+
+Steps:
+
+1. Push the repo to GitHub.
+2. Import the repo into Vercel.
+3. Set `NEXT_PUBLIC_SITE_URL` to your production domain.
+4. Deploy.
+
+## Notes
+
+- The contact form currently validates on the client and posts to a local route handler. Connect it to Resend, Formspree, or another provider before using it for real inbound messages.
+- Replace the placeholder resume at `public/resume/akash-anand-resume.pdf`.
+- Replace placeholder project and social links in `data/`.

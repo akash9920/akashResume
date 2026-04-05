@@ -6,7 +6,6 @@ type ProjectCardProps = {
   impact: string;
   stack: readonly string[];
   githubUrl: string;
-  demoUrl?: string;
 };
 
 export function ProjectCard({
@@ -17,7 +16,6 @@ export function ProjectCard({
   impact,
   stack,
   githubUrl,
-  demoUrl,
 }: ProjectCardProps) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[linear-gradient(180deg,var(--color-surface),var(--color-surface-muted))] p-6 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--color-border-strong)] hover:shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
@@ -65,16 +63,6 @@ export function ProjectCard({
         >
           GitHub
         </a>
-        {demoUrl ? (
-          <a
-            href={demoUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold text-[var(--color-text-muted)] transition-all duration-200 hover:-translate-y-0.5 hover:text-[var(--color-text)]"
-          >
-            Live Demo
-          </a>
-        ) : null}
       </div>
     </article>
   );
