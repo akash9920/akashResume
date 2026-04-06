@@ -78,6 +78,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
+      data-theme="dark"
       className="h-full scroll-smooth antialiased"
     >
       <head>
@@ -90,9 +91,7 @@ export default function RootLayout({
   const resolvedTheme =
     savedTheme === "light" || savedTheme === "dark"
       ? savedTheme
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+      : "dark";
   document.documentElement.dataset.theme = resolvedTheme;
 })();`}</Script>
       </head>

@@ -1,28 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  color-scheme: light;
-  --color-bg: #f4f7fb;
-  --color-bg-elevated: #edf2f8;
-  --color-surface: rgba(255, 255, 255, 0.82);
-  --color-surface-strong: rgba(255, 255, 255, 0.96);
-  --color-surface-muted: rgba(236, 241, 248, 0.92);
-  --color-text: #101828;
-  --color-text-muted: #526071;
-  --color-border: rgba(15, 23, 42, 0.08);
-  --color-border-strong: rgba(15, 23, 42, 0.16);
-  --color-accent: #215fc4;
-  --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.09);
-}
-
-@theme inline {
-  --color-background: var(--color-bg);
-  --color-foreground: var(--color-text);
-  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-  --font-mono: "SFMono-Regular", "IBM Plex Mono", "Menlo", monospace;
-}
-
-[data-theme="dark"] {
   color-scheme: dark;
   --color-bg: #0a1220;
   --color-bg-elevated: #10192b;
@@ -35,6 +13,28 @@
   --color-border-strong: rgba(148, 163, 184, 0.24);
   --color-accent: #79b0ff;
   --shadow-soft: 0 24px 80px rgba(2, 6, 23, 0.48);
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-mono: "SFMono-Regular", "IBM Plex Mono", "Menlo", monospace;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f4f7fb;
+  --color-bg-elevated: #edf2f8;
+  --color-surface: rgba(255, 255, 255, 0.82);
+  --color-surface-strong: rgba(255, 255, 255, 0.96);
+  --color-surface-muted: rgba(236, 241, 248, 0.92);
+  --color-text: #101828;
+  --color-text-muted: #526071;
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.16);
+  --color-accent: #215fc4;
+  --shadow-soft: 0 24px 80px rgba(15, 23, 42, 0.09);
 }
 
 * {
@@ -77,7 +77,7 @@ img {
   background: color-mix(in srgb, var(--color-accent) 28%, white);
 }
 
-[data-theme="dark"] ::selection {
+[data-theme="light"] ::selection {
   background: color-mix(in srgb, var(--color-accent) 32%, black);
 }
 

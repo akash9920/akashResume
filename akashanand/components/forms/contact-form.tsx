@@ -98,7 +98,7 @@ export function ContactForm({ email }: ContactFormProps) {
   return (
     <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
       <form
-        className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-soft)] sm:p-8"
+        className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-[var(--shadow-soft)] sm:p-8"
         onSubmit={handleSubmit}
         noValidate
       >
@@ -106,7 +106,7 @@ export function ContactForm({ email }: ContactFormProps) {
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--color-accent)]">
             Contact Form
           </p>
-          <h3 className="mt-3 text-2xl font-semibold tracking-tight">
+          <h3 className="mt-3 text-xl font-semibold tracking-tight sm:text-2xl">
             Start the conversation
           </h3>
           <p className="mt-3 text-sm leading-7 text-[var(--color-text-muted)]">
@@ -186,7 +186,7 @@ export function ContactForm({ email }: ContactFormProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex min-w-40 items-center justify-center rounded-full bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70"
+            className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto sm:min-w-40"
           >
             {isSubmitting ? "Sending..." : "Send message"}
           </button>
@@ -207,11 +207,11 @@ export function ContactForm({ email }: ContactFormProps) {
       </form>
 
       <aside className="space-y-4">
-        <div className="rounded-[2rem] border border-[var(--color-border)] bg-[linear-gradient(180deg,var(--color-surface),var(--color-surface-muted))] p-6 shadow-[var(--shadow-soft)]">
+        <div className="rounded-[2rem] border border-[var(--color-border)] bg-[linear-gradient(180deg,var(--color-surface),var(--color-surface-muted))] p-5 shadow-[var(--shadow-soft)] sm:p-6">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-[var(--color-accent)]">
             Reach Out
           </p>
-          <h3 className="mt-4 text-xl font-semibold">Direct contact</h3>
+          <h3 className="mt-4 text-lg font-semibold sm:text-xl">Direct contact</h3>
           <div className="mt-5 grid gap-3">
             <a
               href={`mailto:${email}`}
@@ -221,7 +221,7 @@ export function ContactForm({ email }: ContactFormProps) {
               <span className="block font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--color-text-muted)]">
                 Email
               </span>
-              <span className="mt-2 block font-semibold text-[var(--color-accent)]">
+              <span className="mt-2 block break-all font-semibold text-[var(--color-accent)]">
                 {email}
               </span>
             </a>
@@ -239,15 +239,15 @@ export function ContactForm({ email }: ContactFormProps) {
                 <span className="block font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--color-text-muted)]">
                   {link.label}
                 </span>
-                <span className="mt-2 block font-semibold text-[var(--color-text)]">
+                <span className="mt-2 block break-words font-semibold text-[var(--color-text)]">
                   {link.value}
                 </span>
               </a>
             ))}
           </div>
         </div>
-        <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-[var(--shadow-soft)]">
-          <h3 className="text-xl font-semibold">Open to discuss</h3>
+        <div className="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-[var(--shadow-soft)] sm:p-6">
+          <h3 className="text-lg font-semibold sm:text-xl">Open to discuss</h3>
           <p className="mt-4 text-sm leading-7 text-[var(--color-text-muted)]">
             I’m a problem solver who enjoys making complex systems simpler,
             more reliable, and easier for teams to build on. I’m open to

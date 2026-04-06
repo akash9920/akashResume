@@ -54,18 +54,18 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl rounded-full border border-[var(--color-border)] bg-[color:var(--color-surface-strong)]/90 px-4 py-3 shadow-[var(--shadow-soft)] backdrop-blur">
+    <header className="sticky top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-4 lg:px-8">
+      <div className="mx-auto max-w-7xl rounded-[1.75rem] border border-[var(--color-border)] bg-[color:var(--color-surface-strong)]/90 px-3 py-3 shadow-[var(--shadow-soft)] backdrop-blur sm:rounded-full sm:px-4">
         <div className="flex items-center justify-between gap-3">
           <Link
             href="#top"
-            className="flex min-w-0 flex-col"
+            className="min-w-0 flex-1"
             onClick={() => setMenuOpen(false)}
           >
-            <span className="truncate text-sm font-semibold tracking-tight">
+            <span className="block truncate text-sm font-semibold tracking-tight sm:text-base">
               {personalInfo.name}
             </span>
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--color-text-muted)]">
+            <span className="mt-1 block truncate font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-muted)] sm:text-[11px] sm:tracking-[0.25em]">
               {personalInfo.title}
             </span>
           </Link>
@@ -88,14 +88,14 @@ export function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <ThemeToggle />
             <button
               type="button"
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
               aria-label="Toggle navigation menu"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text)] lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text)] lg:hidden"
               onClick={() => setMenuOpen((current) => !current)}
             >
               <span className="text-lg">{menuOpen ? "×" : "≡"}</span>
@@ -116,7 +116,7 @@ export function Navbar() {
                 aria-current={activeSection === item.id ? "page" : undefined}
                 onClick={() => setMenuOpen(false)}
                 className={cn(
-                  "rounded-2xl px-4 py-3 text-sm transition-colors duration-200",
+                  "rounded-2xl px-4 py-3.5 text-sm transition-colors duration-200",
                   activeSection === item.id
                     ? "bg-[var(--color-accent)] text-white"
                     : "bg-[var(--color-surface-muted)] text-[var(--color-text-muted)]",

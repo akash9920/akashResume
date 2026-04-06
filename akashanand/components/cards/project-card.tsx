@@ -18,28 +18,28 @@ export function ProjectCard({
   githubUrl,
 }: ProjectCardProps) {
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[linear-gradient(180deg,var(--color-surface),var(--color-surface-muted))] p-6 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--color-border-strong)] hover:shadow-[0_30px_90px_rgba(15,23,42,0.14)]">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[linear-gradient(180deg,var(--color-surface),var(--color-surface-muted))] p-5 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--color-border-strong)] hover:shadow-[0_30px_90px_rgba(15,23,42,0.14)] sm:p-6">
       <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/65 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="flex items-start justify-between gap-4">
         <div>
           <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="rounded-full border border-[var(--color-border)] bg-[color:var(--color-surface-strong)]/75 px-3 py-1 font-mono text-[11px] uppercase tracking-[0.22em] text-[var(--color-text-muted)]">
+            <span className="rounded-full border border-[var(--color-border)] bg-[color:var(--color-surface-strong)]/75 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-muted)] sm:text-[11px] sm:tracking-[0.22em]">
               {category}
             </span>
             {featured ? (
-              <span className="rounded-full bg-[var(--color-accent)] px-3 py-1 font-mono text-[11px] uppercase tracking-[0.22em] text-white">
+              <span className="rounded-full bg-[var(--color-accent)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white sm:text-[11px] sm:tracking-[0.22em]">
                 Featured
               </span>
             ) : null}
           </div>
-          <h3 className="text-xl font-semibold tracking-tight">{name}</h3>
-          <p className="mt-4 text-sm leading-7 text-[var(--color-text-muted)]">
+          <h3 className="text-lg font-semibold tracking-tight sm:text-xl">{name}</h3>
+          <p className="mt-4 text-sm leading-6 text-[var(--color-text-muted)] sm:leading-7">
             {summary}
           </p>
         </div>
       </div>
 
-      <p className="mt-5 rounded-3xl border border-[var(--color-border)] bg-[color:var(--color-surface-strong)]/72 px-4 py-3 text-sm leading-7 text-[var(--color-text)] transition-transform duration-300 group-hover:-translate-y-0.5">
+      <p className="mt-5 rounded-3xl border border-[var(--color-border)] bg-[color:var(--color-surface-strong)]/72 px-4 py-3 text-sm leading-6 text-[var(--color-text)] transition-transform duration-300 group-hover:-translate-y-0.5 sm:leading-7">
         {impact}
       </p>
 

@@ -60,7 +60,7 @@ export function ProjectsGrid() {
 
   return (
     <div className="mt-10">
-      <div className="flex flex-wrap gap-2">
+      <div className="-mx-4 flex snap-x snap-mandatory gap-2 overflow-x-auto px-4 pb-2 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
         {filters.map((filter) => {
           const isActive =
             filter.type === activeFilter.type && filter.value === activeFilter.value;
@@ -71,7 +71,7 @@ export function ProjectsGrid() {
               type="button"
               onClick={() => setActiveFilter(filter)}
               className={cn(
-                "rounded-full border px-4 py-2 text-sm transition-all duration-200",
+                "shrink-0 snap-start rounded-full border px-4 py-2 text-sm transition-all duration-200",
                 isActive
                   ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white"
                   : "border-[var(--color-border)] bg-[color:var(--color-surface-strong)]/72 text-[var(--color-text-muted)] hover:-translate-y-0.5 hover:border-[var(--color-border-strong)] hover:text-[var(--color-text)]",
@@ -89,7 +89,7 @@ export function ProjectsGrid() {
         engineering, cloud, automation, AI, observability, and scale.
       </p>
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {filteredProjects.map((project, index) => (
           <Reveal key={project.name} delayMs={(index % 6) * 55}>
             <ProjectCard {...project} />

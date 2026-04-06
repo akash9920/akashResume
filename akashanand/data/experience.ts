@@ -44,7 +44,7 @@ export const experience: ExperienceItem[] = [
     title: "Software Engineer",
     company: "NMDC Ltd.",
     location: "India",
-    period: "January 2019 - June 2019",
+    period: "September 2015 - August 2017",
     description:
       "Built internal enterprise software for material tracking and secure service integrations supporting manufacturing and resource management operations.",
     highlights: [

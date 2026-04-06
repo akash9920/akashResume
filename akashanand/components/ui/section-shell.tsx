@@ -13,7 +13,7 @@ export function SectionShell({
   className = "",
 }: SectionShellProps) {
   return (
-    <section id={id} className={`scroll-mt-28 py-12 sm:py-16 ${className}`}>
+    <section id={id} className={`scroll-mt-24 py-10 sm:scroll-mt-28 sm:py-16 ${className}`}>
       <Reveal>{children}</Reveal>
     </section>
   );
