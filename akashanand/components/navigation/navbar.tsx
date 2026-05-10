@@ -95,7 +95,7 @@ export function Navbar() {
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
               aria-label="Toggle navigation menu"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text)] lg:hidden"
+              className="inline-flex h-11 w-11 min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text)] lg:hidden"
               onClick={() => setMenuOpen((current) => !current)}
             >
               <span className="text-lg">{menuOpen ? "×" : "≡"}</span>

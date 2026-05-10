@@ -1,6 +1,12 @@
 export { experience } from "@/data/experience";
 export { navigationItems } from "@/data/navigation";
 export { personalInfo } from "@/data/personal";
+export {
+  getMatrimonialBundle,
+  matrimonialBiodataPath,
+  matrimonialProfile,
+  type MatrimonialLocale,
+} from "@/data/matrimonial-profile";
 export { projects } from "@/data/projects";
 export { siteConfig } from "@/data/site-config";
 export { skills } from "@/data/skills";
