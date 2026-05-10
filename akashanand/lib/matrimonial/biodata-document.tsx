@@ -6,9 +6,9 @@ import {
   Text,
   View,
 } from "@react-pdf/renderer";
-import { matrimonialProfile } from "@/data/matrimonial-profile";
+import { getMatrimonialBundle } from "@/data/matrimonial-profile";
 
-const p = matrimonialProfile;
+const { profile: p, ui: matrimonialUi } = getMatrimonialBundle("en");
 
 const styles = StyleSheet.create({
   page: {
@@ -144,20 +144,24 @@ const styles = StyleSheet.create({
 });
 
 export function BiodataDocument({ photoSrc }: { photoSrc?: string }) {
-  const subtitle = `${p.coreDetails[0].value} · ${p.coreDetails[1].value} · ${p.coreDetails[2].value} · ${p.coreDetails[3].value} · ${p.coreDetails[5].value} · ${p.coreDetails[4].value}`;
+  const subtitleLine1 = `${p.coreDetails[0].value} · ${p.coreDetails[1].value} · ${p.coreDetails[2].value} · ${p.coreDetails[3].value}`;
+  const subtitleLine2 = `${p.coreDetails[4].value} · ${p.coreDetails[5].value} · ${p.coreDetails[6].value} · ${matrimonialUi.grewUpPrefix} ${p.coreDetails[7].value}`;
 
   return (
     <Document title={`${p.name} — Biodata`} author={p.name} subject="Matrimonial biodata">
-      <Page size="A4" style={styles.page}>
+      <Page size="A4" wrap style={styles.page}>
         <View style={styles.headerRow}>
           <View style={styles.headerMain}>
             <Text style={styles.eyebrow}>Matrimonial biodata</Text>
             <Text style={styles.name}>{p.name}</Text>
-            <Text style={styles.subtitle}>{subtitle}</Text>
+            <Text style={styles.subtitle}>{subtitleLine1}</Text>
+            <Text style={[styles.subtitle, { marginTop: 2 }]}>{subtitleLine2}</Text>
             <Text style={styles.intro}>{p.headline}</Text>
             <Text style={[styles.intro, { marginTop: 6 }]}>{p.intro}</Text>
           </View>
           {photoSrc ? (
+            // react-pdf Image is not DOM <img>; no alt prop in types.
+            // eslint-disable-next-line jsx-a11y/alt-text -- @react-pdf/renderer Image
             <Image src={photoSrc} style={styles.photo} />
           ) : null}
         </View>
@@ -218,6 +222,7 @@ export function BiodataDocument({ photoSrc }: { photoSrc?: string }) {
           ))}
         </View>
 
+        <View break />
         <Text style={styles.sectionTitle}>Family</Text>
         {p.family.map((item) => (
           <View key={item.label} wrap={false}>

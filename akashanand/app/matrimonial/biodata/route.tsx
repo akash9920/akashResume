@@ -6,15 +6,21 @@ import { BiodataDocument } from "@/lib/matrimonial/biodata-document";
 
 export const runtime = "nodejs";
 
+function imageMimeForPath(filePath: string): "png" | "jpeg" {
+  return filePath.toLowerCase().endsWith(".png") ? "png" : "jpeg";
+}
+
 async function loadProfilePhotoDataUri(): Promise<string | undefined> {
   const candidates = [
     path.join(process.cwd(), "public", "matrimonial", "akash-profile.png"),
+    path.join(process.cwd(), "public", "matrimonial", "akash-profile.jpg"),
     path.join(process.cwd(), "app", "matrimonial", "images", "profilePic.png"),
+    path.join(process.cwd(), "app", "matrimonial", "images", "profilePic.jpg"),
   ];
   for (const filePath of candidates) {
     try {
       const buf = await readFile(filePath);
-      const ext = filePath.endsWith(".png") ? "png" : "jpeg";
+      const ext = imageMimeForPath(filePath);
       return `data:image/${ext};base64,${buf.toString("base64")}`;
     } catch {
       /* try next */
