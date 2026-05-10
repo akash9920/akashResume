@@ -141,7 +141,7 @@ export function PhotoSlideshow({ slides }: PhotoSlideshowProps) {
 
       {count > 1 ? (
         <nav
-          className="-mx-0.5 mt-3 flex snap-x snap-mandatory gap-2 overflow-x-auto overflow-y-hidden px-0.5 pb-2 pt-1 sm:mt-4"
+          className="-mx-0.5 mt-3 flex snap-x snap-mandatory gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain px-0.5 pb-2 pt-1 sm:mt-4"
           style={{ WebkitOverflowScrolling: "touch" }}
           aria-label="Photo thumbnails"
         >
@@ -176,7 +176,7 @@ export function PhotoSlideshow({ slides }: PhotoSlideshowProps) {
           role="dialog"
           aria-modal="true"
           aria-label="Photo gallery lightbox"
-          className="fixed inset-0 z-[100] grid bg-[#16110f]/92 p-3 backdrop-blur-md sm:p-6"
+          className="fixed inset-0 z-[100] grid bg-[#16110f]/92 p-3 pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:p-6"
           onClick={() => setIsOpen(false)}
         >
           <div
@@ -244,7 +244,7 @@ export function PhotoSlideshow({ slides }: PhotoSlideshowProps) {
             </div>
 
             <nav
-              className="flex max-w-full snap-x snap-mandatory gap-2 overflow-x-auto overflow-y-hidden pb-1"
+              className="flex max-w-full snap-x snap-mandatory gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-1"
               style={{ WebkitOverflowScrolling: "touch" }}
               aria-label="Lightbox thumbnails"
             >
